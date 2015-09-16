@@ -1,2 +1,2 @@
 # portfolio_manager
-Integrate with RESTful Energy Star APIs for Portfolio Manager
+Java integration with Energy Star APIs for Portfolio Manager
