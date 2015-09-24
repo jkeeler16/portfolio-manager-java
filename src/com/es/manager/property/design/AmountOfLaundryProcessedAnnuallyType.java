@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.es.manager.property.use.UseAttributeBase;
@@ -41,6 +42,7 @@ import com.es.manager.property.use.UseAttributeBase;
 @XmlType(name = "amountOfLaundryProcessedAnnuallyType", propOrder = {
     "value"
 })
+@XmlRootElement(name="amountOfLaundryProcessedAnnually")
 public class AmountOfLaundryProcessedAnnuallyType
     extends UseAttributeBase
 {

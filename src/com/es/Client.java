@@ -28,6 +28,7 @@ import com.es.manager.property.metrics.MeasurementSystem;
 import com.es.manager.property.metrics.PropertyMetricsType;
 import com.es.manager.property.edu.EduList;
 import com.es.manager.property.pgp.PgpList;
+import com.es.manager.property.use.UseAttributeBase;
 
 public class Client {
 
@@ -1386,6 +1387,27 @@ public class Client {
 		}
 		
 		return runner.delete(uri, ResponseType.class);
+	}
+	
+	/**
+	 * Add a revision to the property use characteristics for the given property use ID.
+	 * @param propertyUseId
+	 * @param characteristic
+	 * @return
+	 */
+	public ResponseType addPropertyUseDetail(long propertyUseId, UseAttributeBase characteristic){
+		URI uri = null;
+		try {
+			URIBuilder builder = new URIBuilder(String.format("/%s/propertyUse/%d/useDetails", getServletString(), propertyUseId));
+			uri = builder.build();
+		} catch (URISyntaxException e) {
+			String message = String.format("Could not build URI: /propertyUse/{propertyUseId}/useDetails");
+			throw new IllegalArgumentException(message, e);
+		}
+		
+		String body = null;
+		body = Executor.toXmlString(characteristic);
+		return runner.post(uri, body, ResponseType.class);
 	}
 	
 	/* *******************************

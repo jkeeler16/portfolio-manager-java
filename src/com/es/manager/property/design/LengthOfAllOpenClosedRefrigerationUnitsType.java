@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.es.manager.property.design.LengthUnitsType;
@@ -42,6 +43,7 @@ import com.es.manager.property.use.UseAttributeBase;
 @XmlType(name = "lengthOfAllOpenClosedRefrigerationUnitsType", propOrder = {
     "value"
 })
+@XmlRootElement(name="lengthOfAllOpenClosedRefrigerationUnits")
 public class LengthOfAllOpenClosedRefrigerationUnitsType
     extends UseAttributeBase
 {

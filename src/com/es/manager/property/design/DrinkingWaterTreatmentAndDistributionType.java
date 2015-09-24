@@ -11,6 +11,7 @@ package com.es.manager.property.design;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.es.manager.common.LogType;
@@ -51,7 +52,8 @@ import com.es.manager.common.LogType;
 @XmlType(name = "drinkingWaterTreatmentAndDistributionType", propOrder = {
 
 })
-public class DrinkingWaterTreatmentAndDistributionType {
+@XmlRootElement(name="drinkingWaterTreatmentAndDistribution")
+public class DrinkingWaterTreatmentAndDistributionType extends BasePropertyUseType{
 
     @XmlElement(required = true)
     protected String name;

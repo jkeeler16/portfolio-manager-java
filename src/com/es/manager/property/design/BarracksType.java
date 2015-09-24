@@ -11,6 +11,7 @@ package com.es.manager.property.design;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.es.manager.common.LogType;
@@ -58,7 +59,8 @@ import com.es.manager.property.use.UseYesNoType;
 @XmlType(name = "barracksType", propOrder = {
 
 })
-public class BarracksType {
+@XmlRootElement(name="barracks")
+public class BarracksType extends BasePropertyUseType {
 
     @XmlElement(required = true)
     protected String name;

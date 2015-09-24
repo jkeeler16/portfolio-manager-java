@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlElementDecl;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import com.es.manager.common.LogType;
 import com.es.manager.property.use.UseDecimalType;
@@ -58,7 +59,8 @@ import com.es.manager.property.use.UseDecimalType;
 @XmlType(name = "collegeUniversityType", propOrder = {
 
 })
-public class CollegeUniversityType {
+@XmlRootElement(name="collegeUniversity")
+public class CollegeUniversityType extends BasePropertyUseType {
 
     @XmlElement(required = true)
     protected String name;

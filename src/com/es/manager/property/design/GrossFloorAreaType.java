@@ -10,6 +10,7 @@ package com.es.manager.property.design;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -38,6 +39,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "grossFloorAreaType", propOrder = {
     "value"
 })
+@XmlRootElement(name="grossFloorArea")
 public class GrossFloorAreaType
     extends FloorAreaTypeBase
 {

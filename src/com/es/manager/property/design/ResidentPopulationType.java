@@ -10,6 +10,7 @@ package com.es.manager.property.design;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.es.manager.property.use.UseAttributeBase;
@@ -49,6 +50,7 @@ import com.es.manager.property.use.UseAttributeBase;
 @XmlType(name = "residentPopulationType", propOrder = {
     "value"
 })
+@XmlRootElement(name="residentPopulation")
 public class ResidentPopulationType
     extends UseAttributeBase
 {
