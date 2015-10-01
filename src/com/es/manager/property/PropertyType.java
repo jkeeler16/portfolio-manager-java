@@ -28,6 +28,7 @@ import com.es.manager.property.design.PrimaryFunctionType;
 @XmlRootElement(name="property")
 public class PropertyType {
 
+	protected Long id;
     protected String name;
     @XmlSchemaType(name = "string")
     protected ConstructionStatusType constructionStatus;
@@ -48,7 +49,15 @@ public class PropertyType {
     protected ShareLevelType accessLevel;
     protected LogType audit;
 
-    /**
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
      * Gets the value of the name property.
      * 
      * @return
