@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "grossFloorAreaType", propOrder = {
     "value"
 })
-@XmlRootElement(name="grossFloorArea")
+@XmlRootElement(name="totalGrossFloorArea")
 public class GrossFloorAreaType
     extends FloorAreaTypeBase
 {
