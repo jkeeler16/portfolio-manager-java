@@ -771,6 +771,29 @@ public class Client {
 	}
 	
 	/**
+	 * Returns a list of reasons that explain why the specific property cannot
+	 * receive an ENERGY STAR score for a certain period ending date. If both
+	 * the year and month are not provided then the property's current period
+	 * ending date is used.
+	 * 
+	 * @param propertyId
+	 * @return
+	 */
+	public AlertsType getReasonsForNoScore(long propertyId, int month, int year) {
+		URI uri = null;
+		try {
+			URIBuilder builder = new URIBuilder(
+					String.format("/%s/property/%d/reasonsForNoScore?month=%d&year=%d", getServletString(), propertyId, month, year));
+			uri = builder.build();
+		} catch (URISyntaxException e) {
+			String message = String.format("Could not build URI: /property/{propertyId}/reasonsForNoScore");
+			throw new IllegalArgumentException(message, e);
+		}
+
+		return runner.get(uri, AlertsType.class);
+	}
+	
+	/**
 	 * Returns a list of time-weighted use detail values for a specific
 	 * property, period ending date, and measurement system.
 	 * 
@@ -1408,6 +1431,27 @@ public class Client {
 		String body = null;
 		body = Executor.toXmlString(characteristic);
 		return runner.post(uri, body, ResponseType.class);
+	}
+	
+	/**
+	 * Add a correction to the property use characteristics for the given use detail ID.
+	 * @param propertyUseId
+	 * @param characteristic
+	 * @return
+	 */
+	public ResponseType updatePropertyUseDetail(long useDetailsId, UseAttributeBase characteristic){
+		URI uri = null;
+		try {
+			URIBuilder builder = new URIBuilder(String.format("/%s/useDetails/%d", getServletString(), useDetailsId));
+			uri = builder.build();
+		} catch (URISyntaxException e) {
+			String message = String.format("Could not build URI: /useDetails/{useDetailsId}");
+			throw new IllegalArgumentException(message, e);
+		}
+		
+		String body = null;
+		body = Executor.toXmlString(characteristic);
+		return runner.put(uri, body, ResponseType.class);
 	}
 	
 	/* *******************************
