@@ -48,7 +48,7 @@ import com.es.manager.property.use.UseAttributeBase;
 @XmlType(name = "onsiteLaundryType", propOrder = {
     "value"
 })
-@XmlRootElement(name="onsiteLaundry")
+@XmlRootElement(name="laundryFacility")
 public class OnsiteLaundryType
     extends UseAttributeBase
 {
